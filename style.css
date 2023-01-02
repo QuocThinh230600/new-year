@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+*::-webkit-scrollbar{
+    display: none;
+}
+
+.container{
+   top: 0;
+   left: 0;
+}
+
+.container .background{
+    position: absolute;
+	left: 50%;
+	top: 50%;
+    transform: translate(-50%, -50%);
+    height: 600px;
+    width: 360px;
+    background: red;
+    border-radius: 4px;
+}
+
+.container .background .button{
+    position: relative;
+    left: 50%;
+	top: 20%;
+    transform: translate(-50%, -230%);
+    background: yellow;
+    color: black;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    padding: 10px 30px 10px 30px;
+    cursor: pointer;
+}
+
+
+.container .background .button span{ 
+    position: absolute;
+    background-color: #6a5af9;
+    display: block;
+    transition: all 0.2s ease;
+}
+
+.container .background .button span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+}
+
+.container .background .button span:nth-child(2) {
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 0;
+    transition-delay: 0.25s;
+}
+
+.container .background .button span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    transition-delay: 0.5s;
+}
+
+.container .background .button span:nth-child(4) {
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    height: 0;
+    transition-delay: 0.75s;
+}
+
+.container .background .button:hover span:nth-child(odd){
+    width: 100%;
+}
+
+.container .background .button:hover span:nth-child(even){
+    height: 100%;
+}
+
+.container .background .button::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: #6a5af9;
+    transition: width 0.25s linear 1s;
+    z-index: -1;
+}
+
+.container .background .button:hover:before{
+    width: 100%;
+}
+
+.container .background .button:hover{
+    background: white;
+    color: black;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.container .background .item img{
+    position: absolute;
+    left: 50%;
+	top: 50%;
+    transform: translate(-50%, -50%);
+    height: 550px;
+    width: 340px;
+    border-radius: 8px;
+    display: none;
+}
+
+.container.show-image .background .item img{
+    display: block;
+    transition: all 1s ease;
+}
+
+.container .background .text-item{
+    width: 330px;
+    position: absolute;
+    left: 50%;
+	top: 70%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.container .background .text-item p{
+    color: yellow;
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.container .background .text-item img{
+    height: 200px;
+    width: 300px;
+}
+
+.container .background .top-item {
+    border-radius: 4px;
+    width: 360px;
+    height: 0;
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+  
+    border-top: 100px solid #cc0000;
+}
+
+@keyframes example {
+    0% {
+        background-color: #fbcf61;
+        color: black;
+       }
+       20% {
+        background-color: #fbcf65;
+        color: black;
+       }
+       40% {
+        background-color: #ff6f6f;
+        color: black;
+       }
+       60% {
+        background-color: #57cff4;
+        color: black;
+       }
+       80% {
+        background-color: #0ed4c8;
+        ccolor: black;
+       }
+       100% {
+        background-color: #fbcf61;
+        color: black;
+       }
+  }
