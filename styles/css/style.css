@@ -13,6 +13,7 @@
 }
 
 body{
+    font-family: 'Nunito Sans', sans-serif;
     background: yellow;
 }
 
@@ -31,8 +32,12 @@ body{
     margin: 15px;
 }
 
-.container .background .button{
+.container .background .button-x,
+.container .background .button-y, 
+.container .background .button-z, 
+.container .background .button-v{
     position: relative;
+    font-family: 'Nunito Sans', sans-serif;
     background: yellow;
     color: black;
     left: 125px;
@@ -41,22 +46,63 @@ body{
     outline: none;
     font-size: 30px;
     padding: 10px 30px 10px 30px;
+    border-radius: 8px;
     cursor: pointer;
 }
 
-.container .background .item img{
+.container .background.show-menu .button-x,
+.container .background.show-menu .button-y, 
+.container .background.show-menu .button-z, 
+.container .background.show-menu .button-v{
+    z-index: 999;
+    top: 215px;
+    left: 110px;
+    background: red;
+    color: white;
+}
+
+.container .background.show-menu .button-x::after,
+.container .background.show-menu .button-y::after, 
+.container .background.show-menu .button-z::after, 
+.container .background.show-menu .button-v::after{
+    content: "lại";
+}
+
+.container .background .item .random-text{
     position: relative;
-    bottom: 330px;
     left: 30px;
+    bottom: 330px;
+    border: none;
+    background: yellow;
+    color: red;
+    font-size: 50px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
     height: 360px;
     width: 290px;
     border-radius: 8px;
     display: none;
 }
 
-.container .background.show-image .item img{
-    display: block;
+.container .background .item .random-text span{
+    font-size: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.container .background .item .random-text input{
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 10px 0px;
+    background: yellow;
+    color: red;
+    font-weight: 900;
+    font-size: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.container .background.show-menu .item .random-text{
     transition: all 1s ease;
+    display: block;
 }
 
 .container .background .text-item{

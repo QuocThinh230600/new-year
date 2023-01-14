@@ -1,15 +1,73 @@
+let open_item_x = document.querySelectorAll(".button-x");
+let open_item_y = document.querySelectorAll(".button-y");
+let open_item_z = document.querySelectorAll(".button-z");
+let open_item_v = document.querySelectorAll(".button-v");
+let container   = document.querySelector(".container");
+let background  = document.querySelector(".background");
+
+function Toggle_And_RandomText(element, classToggle, id){
+    
+    var random, myArray = ['10.000', '20.000', '30.000', '40.000', '50.000'];  
+
+    newArray = myArray.sort(()=> Math.random() - 0.5);
+
+    random = newArray[(Math.random() * newArray.length) | 0];
+    
+    document.getElementById(id).innerHTML = random + 'Đ' + '<br> <span>CHÚC MỪNG NĂM MỚI</span> <br> <input type="text">';
+
+    return element.classList.toggle(classToggle);
+}
+
+for (var i = 0; i < open_item_x .length; i++){
+    open_item_x[i].addEventListener("click", (e)=>{
+        let buttonParent = e.target.parentElement;
+
+        Toggle_And_RandomText(buttonParent, "show-menu", "x-random");
+
+    });
+}
+
+for (var i = 0; i < open_item_y .length; i++){
+    open_item_y[i].addEventListener("click", (e)=>{
+        let buttonParent = e.target.parentElement;
+
+        Toggle_And_RandomText(buttonParent, "show-menu", "y-random");
+    });
+}
+
+for (var i = 0; i < open_item_z .length; i++){
+    open_item_z[i].addEventListener("click", (e)=>{
+        let buttonParent = e.target.parentElement;
+
+        Toggle_And_RandomText(buttonParent, "show-menu", "z-random");
+    });
+}
+
+for (var i = 0; i < open_item_v .length; i++){
+    open_item_v[i].addEventListener("click", (e)=>{
+        let buttonParent = e.target.parentElement;
+
+        Toggle_And_RandomText(buttonParent, "show-menu", "v-random");
+    });
+}
+
+
 // js hoa mai sharethuthuat.com
 document.write(
     // '<style type="text/css">html{padding-bottom:20px}</style>'+
     '<img '+ 
         'style="position:fixed;'+
         'z-index:9999;'+
+        'width:100px;'+
+        'height:350px;'+
         'top:0;'+
         'left:0;"'+
         'src="./image/banner_left.png" _cke_saved_src="./image/banner_right.png"/>'+
     '<img '+ 
         'style="position:fixed;'+
         'z-index:9999;'+
+        'width:100px;'+
+        'height:350px;'+
         'top:0;'+
         'right:0;"'+
         'src="./image/banner_right.png"/>'+ 
