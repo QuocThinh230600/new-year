@@ -7,14 +7,18 @@ let background  = document.querySelector(".background");
 
 function Toggle_And_RandomText(element, classToggle, id){
     
-    var random, myArray = ['10.000', '20.000', '30.000', '40.000', '50.000'];  
+    var random = Math.floor(Math.random() * 100); 
 
-    newArray = myArray.sort(()=> Math.random() - 0.5);
-
-    random = newArray[(Math.random() * newArray.length) | 0];
+    if (random < 1){
+        document.getElementById(id).innerHTML =  '100.0000 Đ' + '<br> <span>CHÚC MỪNG NĂM MỚI</span> <br> <input type="text">';
+    } else if (random >= 2 && random <= 10){
+        document.getElementById(id).innerHTML =  '50.0000 Đ' + '<br> <span>CHÚC MỪNG NĂM MỚI</span> <br> <input type="text">';
+    } else if (random >= 11 && random <= 60){
+        document.getElementById(id).innerHTML =  '20.0000 Đ' + '<br> <span>CHÚC MỪNG NĂM MỚI</span> <br> <input type="text">';
+    } else {
+        document.getElementById(id).innerHTML =  '10.0000 Đ' + '<br> <span>CHÚC MỪNG NĂM MỚI</span> <br> <input type="text">';
+    }
     
-    document.getElementById(id).innerHTML = random + 'Đ' + '<br> <span>CHÚC MỪNG NĂM MỚI</span> <br> <input type="text">';
-
     return element.classList.toggle(classToggle);
 }
 
